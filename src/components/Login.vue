@@ -74,7 +74,7 @@ export default {
 
 <style lang="less" scoped>
     .login_container {
-        background-color: #fc9d9a;
+        background-color: #ffcc99;
         height: 100%;
     }
     .login_box {
@@ -96,7 +96,7 @@ export default {
             position: absolute;
             left: 50%;
             transform: translate(-50%,-50%);
-            background-color:#fc9d9a;
+            background-color:#ffcc99;
             img {
                 width: 100%;
                 height: 100%;
