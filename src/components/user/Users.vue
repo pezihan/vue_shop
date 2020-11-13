@@ -150,7 +150,7 @@ export default {
         // 当前的页数
         pagenum: 1,
         // 当前每页显示多少条数据
-        pagesize: 2
+        pagesize: 5
       },
       // 用户列表数据
       userlist: [],
@@ -169,7 +169,7 @@ export default {
       addFormRules: {
         username: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
-          { min: 3, max: 10, message: '用户名的长度应在3~10个字符之间', trigger: 'blur' }
+          { min: 2, max: 10, message: '用户名的长度应在2~10个字符之间', trigger: 'blur' }
         ],
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
