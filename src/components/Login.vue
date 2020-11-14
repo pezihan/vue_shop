@@ -80,8 +80,8 @@ export default {
     .login_box {
         width: 450px;
         height: 300px;
-        background-color: #fff;
-        border-radius: 3px;
+        background-color: RGBA(255,255,255,.8);
+        border-radius: 8px;
         position: absolute;
         left: 50%;
         top: 50%;
