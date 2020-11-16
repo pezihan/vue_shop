@@ -15,16 +15,28 @@ import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 
+// 导入 nprogress 顶部进度条条 包对应的js和css
+import Nprogress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 import axios from 'axios'
 // 配置请求的后端根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
-// 配置axios拦截器添加token验证,保证拥有获取数据的权限(在请求头中添加token属性)
+// 配置axios的request拦截器添加token验证,保证拥有获取数据的权限(在请求头中添加token属性)和添加 Nprogress 进度条 Nprogress.start()
 axios.interceptors.request.use(config => {
   // console.log(config)
+  Nprogress.start() // 展示进度条
   config.headers.Authorization = window.sessionStorage.getItem('token')
   // 在最后必须 return config
   return config
 })
+
+// 在 response Nprogress.done()
+axios.interceptors.response.use(config => {
+  Nprogress.done() // 隐藏进度条
+  return config
+})
+
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
